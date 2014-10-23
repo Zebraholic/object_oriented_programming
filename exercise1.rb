@@ -1,10 +1,9 @@
 class Person
 	attr_accessor :name
 	def greeting
-	puts "Hi, my name is #{name}"
+	puts "Hi, my name is #{name}."
     end
 end
-
 
 
 class Student < Person
@@ -23,12 +22,20 @@ end
 
 
 student1 = Student.new
+student1.learn
 student1.name = "Chris"
-puts student1.name
+puts student1.greeting
+#student1.teach
 
 instructor = Instructor.new
+instructor.teach
 instructor.name = "Christina"
-puts instructor.name
+puts instructor.greeting
+#instructor.learn
+
+
+##Both learn and teach are local attributes and therefoer
+##do not work outside their respective classes.
 
 
 
@@ -36,8 +43,3 @@ puts instructor.name
 
 
 
-
-
-#Create a parent Person 
-#class that contains the attribute name and
-# an initializer to set the name.
