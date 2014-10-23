@@ -23,26 +23,36 @@ class Rover
  			@y -= 1
  		elsif @direction == "E"
  			@x += 1
- 		elsif @direction == "W"
+ 		else @direction == "W"
  			@x -= 1
  		end
  	end
 
  	def turn_left
  		if @direction == "N"
- 			@x += 1
- 		elsif @direction == "S"
  			@x -= 1
+ 		elsif @direction == "S"
+ 			@x += 1
  		elsif @direction == "E"
  			@y += 1
  		else direction == "W"
  			@y -= 1
- 					
+ 		end
+ 	end
 
-
+ 	def turn_right
+ 		if @direction == "N"
+ 			@x += 1
+ 		elsif @direction == "S"
+ 			@x -= 1
+ 		elsif @direction == "E"
+ 			@y -= 1
+ 		else direction == "W"
+ 			@y += 1
+ 		end
  	end
  end 	
 
 rover = Rover.new(0, 0, "N")
-puts rover.x, rover.y, rover.direction
+puts "Enter you instructions: #{M}, #{TL}, #{TR}"
 rover.read_instruction("M")
