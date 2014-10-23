@@ -1,5 +1,8 @@
 class Person
 	attr_accessor :name
+	def greeting
+	puts "Hi, my name is #{name}"
+    end
 end
 
 
@@ -19,10 +22,15 @@ end
 
 
 
-name = Student.new
-name.learn
-name = Instructor.new
-name.teach
+student1 = Student.new
+student1.name = "Chris"
+puts student1.name
+
+instructor = Instructor.new
+instructor.name = "Christina"
+puts instructor.name
+
+
 
 
 
