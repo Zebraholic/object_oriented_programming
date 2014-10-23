@@ -2,9 +2,9 @@ class Rover
 	attr_accessor :x, :y, :direction
 
 	def initalize(x, y, direction)
-      @x = x
-      @y = y
-      @direction = direction
+   		@x = x
+    	@y = y
+        direction = direction
     end
 
 	def read_instruction(instruction)
@@ -12,12 +12,8 @@ class Rover
 			move
 		elsif instruction == "TL"
 			turn_left
-		elsif instruction == "TR"	
-
-					
-
-	end
-
+		else instruction == "TR"	
+	end	
 
  	def move
  		@test = "test!"
@@ -34,8 +30,15 @@ class Rover
 
  	def turn_left
  		if @direction == "N"
- 			@direction = "W"
- 			@x += 1		
+ 			@x += 1
+ 		elsif @direction == "S"
+ 			@x -= 1
+ 		elsif @direction == "E"
+ 			@y += 1
+ 		else direction == "W"
+ 			@y -= 1
+ 					
+
 
  	end
  end 	
