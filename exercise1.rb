@@ -34,7 +34,7 @@ puts instructor.greeting
 #instructor.learn
 
 
-##Both learn and teach are local attributes and therefoer
+##Both learn and teach are local attributes and therefore
 ##do not work outside their respective classes.
 
 
