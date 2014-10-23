@@ -1,22 +1,27 @@
 class Rover
 	attr_accessor :x, :y, :direction
 
-	def initalize(x, y, direction)
+	def initialize(x, y, direction)
    		@x = x
     	@y = y
-        direction = direction
+        @direction = direction
     end
 
-	def read_instruction(instruction)
-		if instruction == "M"
-			move
-		elsif instruction == "TL"
-			turn_left
-		else instruction == "TR"	
+	def read_instruction(instructions)
+		# for each instruction iterate
+		instructions.split('').each do |instruction|
+			if instruction == "M"
+				move
+			elsif instruction == "L"
+				turn_left
+			else
+				turn_right
+			end	
+		end
+		# end iteration
 	end	
 
  	def move
- 		@test = "test!"
  		if @direction == "N"
  			@y += 1
  		elsif @direction == "S"
@@ -30,29 +35,31 @@ class Rover
 
  	def turn_left
  		if @direction == "N"
- 			@x -= 1
+ 			@direction = "W"
  		elsif @direction == "S"
- 			@x += 1
+ 			@direction = "E"
  		elsif @direction == "E"
- 			@y += 1
+ 			@direction = "N"
  		else direction == "W"
- 			@y -= 1
+ 			@direction = "S"
  		end
  	end
 
  	def turn_right
  		if @direction == "N"
- 			@x += 1
+ 			@direction = "E"
  		elsif @direction == "S"
- 			@x -= 1
+ 			@direction = "W"
  		elsif @direction == "E"
- 			@y -= 1
+ 			@direction = "S"
  		else direction == "W"
- 			@y += 1
+ 			@direction = "N"
  		end
  	end
  end 	
 
 rover = Rover.new(0, 0, "N")
-puts "Enter you instructions: #{M}, #{TL}, #{TR}"
-rover.read_instruction("M")
+puts "Current position: #{rover.x}, #{rover.y}, #{rover.direction}"
+rover.read_instruction("MMRMMRMRRM")
+puts "Current position: #{rover.x}, #{rover.y}, #{rover.direction}"
+
